@@ -10,6 +10,28 @@ public class SkrivBlogg {
 
 	public static boolean skriv(Blogg samling, String mappe, String filnavn) {
 
-		throw new UnsupportedOperationException(TODO.method());
+		boolean skrevet = true;
+		String filePath = mappe + filnavn;
+		
+		try {
+			
+			PrintWriter file = new PrintWriter(filePath);
+			
+			file.println(samling.toString());
+			file.println(":)"); //test for å se om det blir skrevet i blogg.dat når man kjører TestSkrivBlogg.java
+			file.close();
+			
+		}
+		
+		catch(Exception e) {
+			
+			System.out.println("Kunne ikke skrive i fil!!!");
+			
+			return !skrevet;
+			
+		}
+		
+		return skrevet;
+		
 	}
 }
