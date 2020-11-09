@@ -19,6 +19,7 @@ public class SkrivBlogg {
 			
 			file.println(samling.toString());
 			file.println(":)"); //test for å se om det blir skrevet i blogg.dat når man kjører TestSkrivBlogg.java
+			
 			file.close();
 			
 		}

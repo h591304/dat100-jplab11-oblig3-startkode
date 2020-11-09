@@ -102,7 +102,7 @@ public class Blogg {
 	// valgfrie oppgaver nedenfor
 	
 	public void utvid() {
-		throw new UnsupportedOperationException(TODO.method());
+		Innlegg[] nyTab = new Innlegg[innleggtabell.length*2]; //dobbelt så stor tabell av objektet Innlegg
 	}
 	
 	public boolean leggTilUtvid(Innlegg innlegg) {
@@ -113,7 +113,20 @@ public class Blogg {
 	
 	public boolean slett(Innlegg innlegg) {
 		
-		throw new UnsupportedOperationException(TODO.method());
+		boolean settInn = true;
+		
+		int pos = finnInnlegg(innlegg);
+		if(pos >= 0) {
+			nesteledig--;
+			innleggtabell[pos] = innleggtabell[nesteledig];
+			innleggtabell[nesteledig] = null;
+			return settInn;
+		}
+		
+		else {
+			return !settInn;
+		}
+			
 	}
 	
 	public int[] search(String keyword) {
